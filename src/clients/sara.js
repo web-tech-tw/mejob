@@ -8,7 +8,7 @@ const {
 const useSaraToken = (request) => {
     const tokenValue = localStorage.getItem(tokenName);
     if (!tokenValue) return;
-    request.headers.set('authorization', tokenValue);
+    request.headers.set('authorization', `SARA ${tokenValue}`);
 };
 
 const newSaraToken = (response) => {
