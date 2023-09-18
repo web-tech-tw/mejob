@@ -21,7 +21,7 @@
           <nav class="grid gap-y-8">
             <div v-for="(item, index) in menuItems" :key="index">
               <app-header-mobile-menu-dropdown :name="item.name" :children="item.children" v-if="item.type === 'dropdown'" />
-              <app-header-mobile-menu-item :name="item.name" :icon="item.icon" @click="item.onClick" v-else />
+              <app-header-mobile-menu-item :name="item.name" :icon="item.icon" @click="handleItemClick(item)" v-else />
             </div>
           </nav>
         </div>
@@ -51,5 +51,10 @@ watch(parentMenuState, (value) => {
 
 const handleMobileMenuCloseClick = () => {
   emit("close");
+}
+
+const handleItemClick = (item) => {
+  parentMenuState.value = false;
+  item.onClick();
 }
 </script>

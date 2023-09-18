@@ -11,7 +11,7 @@
       <div v-show="isDropdownOpened" class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
         <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
           <app-header-normal-menu-dropdown-item :name="child.name" :description="child.description" :icon="child.icon"
-            @click="child.onClick" v-for="(child, index) in props.children" :key="index" />
+            @click="handleItemClick(child)" v-for="(child, index) in props.children" :key="index" />
         </div>
       </div>
     </div>
@@ -40,6 +40,11 @@ const handleDropdownClick = () => {
     parentMenuState.value = true;
   }
 };
+
+const handleItemClick = (item) => {
+  parentMenuState.value = false;
+  item.onClick();
+}
 
 const props = defineProps({
   name: {
