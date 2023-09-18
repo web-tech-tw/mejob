@@ -7,7 +7,7 @@
           <span class="block text-indigo-600 xl:inline">前端 Web 模板</span>
         </h1>
         <p class="mt-3 text-base text-gray-500">
-          Vue 2 + Tailwind CSS，為了快速發展專案而生，請自行修改內容。
+          Vite + Vue.js 3 + Tailwind CSS，為了快速發展專案而生，請自行修改內容。
         </p>
         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
           <div class="mt-3 sm:mt-0 sm:ml-3">
