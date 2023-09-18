@@ -12,11 +12,13 @@ export const menuItems = [
       {
         name: 'template.inte',
         description: '前端 Web 通用模板',
+        icon: 'GlobeAltIcon',
         onClick: () => window.open('https://github.com/web-tech-tw/template.inte')
       },
       {
         name: 'template.recv',
         description: '後端 API 通用模板',
+        icon: 'ServerStackIcon',
         onClick: () => window.open('https://github.com/web-tech-tw/template.recv')
       }
     ]
@@ -24,11 +26,13 @@ export const menuItems = [
   {
     name: 'GitHub',
     type: 'function',
+    icon: 'CodeBracketIcon',
     onClick: () => window.open('https://github.com/web-tech-tw')
   },
   {
     name: '登入',
     type: 'function',
+    icon: 'ArrowRightOnRectangleIcon',
     onClick: () => location.assign(saraInitHost)
   }
 ];
