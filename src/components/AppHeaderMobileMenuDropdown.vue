@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, inject, watch } from "vue";
 
 import { ChevronDownIcon } from "@heroicons/vue/24/solid"
 
@@ -27,8 +27,18 @@ import AppHeaderMobileMenuDropdownItem from './AppHeaderMobileMenuDropdownItem.v
 
 const isDropdownOpened = ref(false);
 
+const parentMenuState = inject('parent-menu-state')
+watch(parentMenuState, (value) => {
+  if (!value) {
+    isDropdownOpened.value = false;
+  }
+});
+
 const handleDropdownClick = () => {
   isDropdownOpened.value = !isDropdownOpened.value;
+  if (isDropdownOpened.value) {
+    parentMenuState.value = true;
+  }
 };
 
 const props = defineProps({

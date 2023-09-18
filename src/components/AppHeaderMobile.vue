@@ -31,6 +31,8 @@
 </template>
 
 <script setup>
+import { inject, watch } from "vue";
+
 import { XMarkIcon } from "@heroicons/vue/24/solid"
 
 import AppHeaderMobileMenuItem from "./AppHeaderMobileMenuItem.vue"
@@ -40,7 +42,14 @@ import { titleShort, menuItems } from "./AppHeaderMenuData.js";
 
 const emit = defineEmits(["close"]);
 
+const parentMenuState = inject('parent-menu-state')
+watch(parentMenuState, (value) => {
+  if (!value) {
+    emit("close");
+  }
+});
+
 const handleMobileMenuCloseClick = () => {
-  emit("close-click");
+  emit("close");
 }
 </script>
