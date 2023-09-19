@@ -30,6 +30,6 @@ client.get("users/me").json().then((response) => {
     loginState.value = response;
 }).catch((error) => {
     loginState.value = false;
-    console.error(error);
+    console.warn(error.message);
 });
 </script>
