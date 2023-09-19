@@ -12,7 +12,7 @@ import AppHeaderMobileMenuItem from "./AppHeaderMobileMenuItem.vue";
 
 import { useClient } from "../clients/sara.js";
 
-const saraInitHost = import.meta.env.VITE_SARA_INTE_HOST;
+const saraInteHost = import.meta.env.VITE_SARA_INTE_HOST;
 
 const client = useClient();
 
@@ -24,7 +24,7 @@ const nickname = computed(() => {
 })
 
 const handleClick = () => {
-    location.assign(saraInitHost);
+    location.assign(saraInteHost);
 }
 
 client.get("users/me").json().then((response) => {
