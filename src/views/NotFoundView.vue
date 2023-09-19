@@ -9,13 +9,6 @@
         您所請求的頁面不見了，或者是從來沒有存在過。
       </p>
       <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-        <div class="rounded-md shadow">
-          <button v-if="$router.history.length"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                  @click="$router.back">
-            返回上一頁
-          </button>
-        </div>
         <div class="mt-3 sm:mt-0 sm:ml-3">
           <router-link
               class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
