@@ -26,8 +26,8 @@ const handleClick = () => {
     location.assign(saraInteHost);
 }
 
-client.get("users/me").json().then((response) => {
-    loginState.value = response;
+client.get("users/me").json().then((result) => {
+    loginState.value = result;
 }).catch((error) => {
     loginState.value = false;
     console.warn(error.message);
