@@ -11,10 +11,16 @@ const useSaraToken = (request) => {
     request.headers.set('authorization', `SARA ${tokenValue}`);
 };
 
-const newSaraToken = (response) => {
+const renewSaraToken = (_request, _options, response) => {
     const tokenValue = response.headers.get('sara-issue');
     if (!tokenValue) return;
     localStorage.setItem(tokenName, tokenValue);
+};
+
+const revokeSaraToken = (_request, _options, response) => {
+    const tokenStatus = response.status;
+    if (tokenStatus !== 401) return;
+    localStorage.removeItem(tokenName);
 };
 
 const client = ky.create({
@@ -24,7 +30,8 @@ const client = ky.create({
             useSaraToken,
         ],
         afterResponse: [
-            newSaraToken,
+            renewSaraToken,
+            revokeSaraToken,
         ],
     }
 });
