@@ -27,5 +27,10 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          branch: dist-pages
           folder: dist
+
+      - name: Webhook 📲
+        uses: wei/curl@master
+        with:
+          args: ${{ vars.DEPLOY_WEBHOOK_URL }}?secret=${{ secrets.DEPLOY_WEBHOOK_SECRET }}
