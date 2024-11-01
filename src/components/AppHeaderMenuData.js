@@ -1,3 +1,5 @@
+import router from "../router";
+
 export const title = "meJob 咪價";
 export const subtitle = "工作迷 - 自由的工作機會平台，讓你找到最適合的工作。";
 
@@ -11,28 +13,27 @@ export const onClickSara = () => {
 
 export const menuItems = [
   {
-    name: "通用模板",
-    type: "dropdown",
-    status: "template",
-    children: [
-      {
-        name: "template.inte",
-        description: "前端 Web 通用模板",
-        icon: "GlobeAltIcon",
-        onClick: () => window.open("https://github.com/web-tech-tw/template.inte"),
-      },
-      {
-        name: "template.recv",
-        description: "後端 API 通用模板",
-        icon: "ServerStackIcon",
-        onClick: () => window.open("https://github.com/web-tech-tw/template.recv"),
-      }
-    ]
+    name: "找工作",
+    type: "function",
+    icon: "BriefcaseIcon",
+    onClick: () => {
+      router.push("/careers");
+    },
   },
   {
-    name: "GitHub",
+    name: "找人才",
     type: "function",
-    icon: "CodeBracketIcon",
-    onClick: () => window.open("https://github.com/web-tech-tw"),
+    icon: "UserGroupIcon",
+    onClick: () => {
+      router.push("/resumes");
+    },
+  },
+  {
+    name: "職場暢談",
+    type: "function",
+    icon: "ChatBubbleOvalLeftEllipsisIcon",
+    onClick: () => {
+      router.push("/chat");
+    },
   }
 ];
