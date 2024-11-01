@@ -14,7 +14,7 @@ import LoadingCircleIcon from "../components/LoadingCircleIcon.vue";
 
 onMounted(() => {
   setTimeout(() => {
-    location.href = "/openchat/#/join/mejob";
+    location.href = "/openchat/#/join";
   }, 1000);
 });
 </script>
