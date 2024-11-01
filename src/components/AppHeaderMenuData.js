@@ -1,7 +1,7 @@
 import router from "../router";
 
 export const title = "meJob 咪價";
-export const subtitle = "工作迷 - 自由的工作機會平台，讓你找到最適合的工作。";
+export const subtitle = "工作迷";
 
 export const isSaraEnabled = true;
 export const onClickSara = () => {
