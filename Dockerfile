@@ -1,5 +1,6 @@
 FROM node:24-alpine AS builder
 WORKDIR /src
+ARG BASE_URL
 COPY package*.json ./
 RUN npm install
 COPY . .
